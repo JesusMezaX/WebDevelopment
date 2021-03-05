@@ -1,0 +1,141 @@
+/* definiendo paleta de colores */
+:root {
+    --blanco: #ffffff;
+    --negro: #000000;
+    --primario: #2ff40a;
+    --secundario: rgba(47,244,10,0.25);
+    --terciario: rgb(243, 163, 13);
+    --gris:#757575;
+}
+
+/*Estilos Generales*/
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*,*:before,*:after{
+    box-sizing: inherit;
+}
+
+body{
+    font-size: 16px;
+    font-family: 'Stick', sans-serif;
+}
+
+/* styles utility */
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+/*Titulo Styles*/
+.header-bg{
+    background-color: var(--negro);
+    margin-top: -5rem;
+}
+.header-bg .sign{
+    display: block;
+    padding: 4rem;
+    width: 60%;
+    height: 50%;
+    margin: -7rem auto 0 auto;   
+}
+
+.titulo {
+    margin: 0;
+    padding: 4.5rem;
+    font-size: 3.8rem;
+    text-align: center;
+    color: var(--primario);
+}
+.titulo span{
+    font-size: 2rem;
+    color: var(--blanco);
+}
+
+.photo{
+    width: 25rem;
+    height: 41rem;
+}
+
+@media (min-width: 468px) {
+    .titulo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .titulo span {
+        margin-left: 2rem;
+        margin-top: 2rem;
+    }
+    .photo{
+        width: 25%;
+        height: 50%;
+    }
+
+    .header-bg .sign{
+        position: absolute;
+        margin:-25% auto 0 48%;
+        width: 30%;
+        height: 30%;
+    }
+
+}
+
+/*Nav styles*/
+.nav-bg{
+    background-color: var(--secundario);
+} 
+.navegacion-principal{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.navegacion-principal a {
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 2rem; 
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 2rem;
+    padding-left: 2rem;
+    color: var(--negro);
+    border-left: 0.5rem solid var(--primario);
+}
+.navegacion-principal a:last-of-type{
+    border-right: 0.5rem solid var(--primario);
+} 
+
+.navegacion-principal a:hover {
+    background-color: var(--blanco);
+    border-left: 5rem solid var(--primario);
+    font-size: 2.5rem;
+    transition: all 1s;
+}
+
+
+@media (min-width: 480px) {
+    .navegacion-principal{
+        flex-direction: row;
+    } 
+    .navegacion-principal a{
+        text-align: center;
+    }
+
+}
+
+/*Banner Styles*/
+.bannerStart{
+    background-image: url(../img/BannerStart.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 45rem;
+    padding: 2rem;
+}
+
+footer p span{
+    font-size: 1rem;
+}
