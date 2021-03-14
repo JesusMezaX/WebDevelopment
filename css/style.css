@@ -12,17 +12,9 @@
 html{
     font-size: 62.5%;
     box-sizing: border-box;
-    scroll-snap-type: y proximity;
 }
 /*Configuracion de snaps para scroll*/
-.front,
-.bannerStart,
-.servicios,
-.contacto
-{
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
-}
+
 
 *,*:before,*:after{
     box-sizing: inherit;
