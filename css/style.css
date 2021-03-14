@@ -5,14 +5,25 @@
     --primario: #2ff40a;
     --secundario: rgba(47,244,10,0.25);
     --terciario: rgb(243, 163, 13);
-    --gris:#757575;
+    --gris:#7575752f;
 }
 
 /*Estilos Generales*/
 html{
     font-size: 62.5%;
     box-sizing: border-box;
+    scroll-snap-type: y proximity;
 }
+/*Configuracion de snaps para scroll*/
+.front,
+.bannerStart,
+.servicios,
+.contacto
+{
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
 *,*:before,*:after{
     box-sizing: inherit;
 }
@@ -27,7 +38,52 @@ body{
     max-width: 120rem;
     margin: 0 auto;
 }
+.wd-sm-100{
+    width: 100%;
+}
+@media (min-width: 480px) {
+    .wd-sm-100{
+        width: auto;
+    }
+}
+.flex{
+    display: flex;
+}
+.der-align{
+    justify-content: flex-end;
+}
+.izq-align{
+    justify-content: flex-start;
+}
+.center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+@media (min-width: 480px) {
+    .center{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+main{
+    background-color: black;
+    color: white;
+    -webkit-box-shadow: 1px 11px 5px 0px rgba(0,0,0,0.36);
+    -moz-box-shadow: 1px 11px 5px 0px rgba(0,0,0,0.36);
+    box-shadow: 1px 11px 5px 0px rgba(0,0,0,0.36);  
+    padding-bottom: 0.7rem;
+}
+main h2 {
+    margin: 0rem;
+    color: var(--negro);
+    padding: 2rem;
+    background-color: var(--primario);
+    text-align: center;
+}
 /*Button Styles*/
 .btn{
     text-decoration: none;
@@ -37,6 +93,15 @@ body{
     padding: 2rem;
     border: 1px solid var(--blanco);
     border-radius: 3rem;
+   
+}
+.btn2{
+    margin: 0;
+    color:black;
+    font-size: 2rem;
+    padding: 2rem;
+    border: 1px solid var(--blanco);
+    border-radius: 2rem;
 }
 
 .btn:hover{
@@ -44,6 +109,7 @@ body{
     font-weight: 700;
     color: var(--negro);
     transition: all 0.5s;
+    cursor: pointer;
 }
 
 /*Titulo Styles*/
@@ -180,9 +246,6 @@ body{
     height: 60%;
     width: 60%;
 }
-.bannerStarterDiv svg:hover{
-    stroke: var(--blanco);
-}
 
 .bannerStarterDiv p {
     font-size: 2.5rem;
@@ -203,6 +266,126 @@ body{
 
 }
 
+
+/* services styles */
+.servicios section p {
+    line-height: 2;
+    color: var(--blanco);
+    text-align: center;
+}
+.servicios section h3 {
+    color: var(--blanco);
+}
+
+.servicios section {
+    padding: 2rem 5rem 2rem 5rem;
+
+}
+
+@media (min-width: 480px) {
+    .servicios {
+        column-gap: 5rem;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        
+    }
+    .servicios section {
+        padding: 0rem;
+    }
+}
+
+.iconos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    height: 15rem;
+    background-color: var(--gris);
+    border-radius: 50%;
+}
+
+.iconos:hover{
+    background-color: var(--blanco);
+    transition: all 1s;
+}
+
+.card{
+    background-color: rgb(255 255 255 / 10%);
+    border-radius: 10%;
+    margin: 2rem;
+}
+@media (min-width: 480px) {
+    .card{
+        background-color: var(--negro);
+        border-radius: 0%;
+        margin: 0;
+    }
+}
+
+/* contacto styles  */
+.contacto {
+    background-color: rgb(255 255 255 / 10%);
+    width: min(60rem, 100%);/* se define el tamaño minimo y maximo que va a toimar el elemento */
+    margin: 0rem auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+@media (min-width: 480px) {
+    .contacto {
+        margin: 2rem auto;
+    }
+}
+.contacto fieldset{
+    border: none;
+}
+.contacto legend {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: var(--primario);
+}
+
+
+.campos{
+    margin-bottom: 2rem;
+}
+
+.campos label {
+    color: var(--blanco);
+    margin-bottom: .5rem;
+    display: block;
+}
+
+.input-text{
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+/*Footer Styles*/
+footer {
+    background-color: var(--primario);
+    text-align:center;
+}
+
+footer p {
+    margin: 0;
+    padding: 2rem;
+    font-size: 1.7rem;
+}
 footer p span{
     font-size: 1rem;
+}
+
+@media (min-width: 480px) {
+    footer p {
+        margin: 0;
+        padding: 3rem;
+        font-size: 2.5rem;
+    }
+    footer p span{
+        font-size: 1rem;
+    }
 }
